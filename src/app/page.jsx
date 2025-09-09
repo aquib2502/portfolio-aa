@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronDown, Menu, X, ExternalLink, Mail, Phone, Github, Linkedin, ArrowRight, Star, MessageCircle, Code, Sparkles, Heart, Zap, Building2 } from 'lucide-react';
+import { ChevronDown, Menu, X,StarIcon, MoonIcon, ExternalLink, Mail, Phone, Github, Linkedin, ArrowRight, Star, MessageCircle, Code, Sparkles, Heart, Zap, Building2 } from 'lucide-react';
 import { Mosque, BookOpen, Hand } from "lucide-react"; // ✅ FIXED IMPORT
 const AAPortfolio = () => {
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
@@ -110,116 +110,124 @@ const AAPortfolio = () => {
     }
   ];
 
-  // Landing Page Component
-  const LandingPage = () => (
-    <div className="fixed inset-0 z-50 overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-emerald-900/20 to-amber-900/20">
-        {/* Floating Orbs */}
-        {[...Array(20)].map((_, i) => (
+  const LandingPage = () => {
+  return (
+    <div className="fixed inset-0 overflow-hidden">
+      {/* Background Image Placeholder with Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect fill="%23111827" width="1920" height="1080"/></svg>')`,
+        }}
+      />
+      
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-900/70 via-gray-900/50 to-indigo-900/70" />
+      
+      {/* Subtle Animated Elements */}
+      <div className="absolute inset-0">
+        {[...Array(8)].map((_, i) => (
           <div
             key={i}
-            className="absolute rounded-full animate-float opacity-10"
+            className="absolute w-1 h-1 bg-indigo-300/30 rounded-full animate-pulse"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              width: `${20 + Math.random() * 80}px`,
-              height: `${20 + Math.random() * 80}px`,
-              background: i % 3 === 0 ? 'linear-gradient(45deg, #10b981, transparent)' 
-                         : i % 3 === 1 ? 'linear-gradient(45deg, #f59e0b, transparent)'
-                         : 'linear-gradient(45deg, #8b5cf6, transparent)',
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${8 + Math.random() * 12}s`
+              left: `${20 + Math.random() * 60}%`,
+              top: `${20 + Math.random() * 60}%`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${3 + Math.random() * 2}s`
             }}
           />
         ))}
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen p-4">
-        <div className="text-center max-w-4xl mx-auto">
-          {/* Logo Animation */}
-          <div className="mb-8 animate-scale-in">
-            <div className="inline-flex items-center gap-4 mb-6">
-              <div className="relative group">
-                <div className="w-20 h-20 bg-gradient-to-r from-emerald-500 to-amber-500 rounded-2xl flex items-center justify-center transform group-hover:rotate-12 transition-all duration-500 shadow-2xl">
-                  <span className="text-white font-bold text-2xl">A&A</span>
-                </div>
-                <div className="absolute -inset-2 bg-gradient-to-r from-emerald-500 to-amber-500 rounded-2xl blur-lg opacity-50 animate-pulse"></div>
-              </div>
-              <div className="text-left">
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-amber-400 bg-clip-text text-transparent">
-                  A&A Technologies
-                </h1>
-                <p className="text-emerald-300 text-lg">Crafting Digital Excellence</p>
-              </div>
+      {/* Main Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-6 text-center">
+        
+        {/* Logo */}
+        <div className="mb-8">
+          <div className="relative group cursor-pointer">
+            <div className="w-24 h-24 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-3xl flex items-center justify-center shadow-2xl transform group-hover:scale-105 transition-all duration-500">
+              <span className="text-white font-bold text-3xl tracking-wider">A&A</span>
             </div>
+            <div className="absolute -inset-1 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
           </div>
+        </div>
 
-          {/* Inspiring Quote */}
-          <div className="mb-12 animate-fade-up delay-300">
-            <blockquote className="text-2xl md:text-4xl lg:text-5xl font-light text-white leading-relaxed mb-6">
-              <span className="text-emerald-400">"</span>
-              In every pixel we place, in every line of code we write,
+        {/* Company Name */}
+        <h1 className="text-2xl md:text-3xl font-light text-white mb-2 tracking-wide">
+          A&A Technologies
+        </h1>
+        <p className="text-indigo-300 text-sm md:text-base mb-16 opacity-80">
+          Digital Excellence, Inspired by Faith
+        </p>
+
+        {/* Quranic Verse */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <div className="relative">
+            <MoonIcon className="w-6 h-6 text-indigo-400 mx-auto mb-6 opacity-60" />
+            <blockquote className="text-lg md:text-2xl font-light text-white leading-relaxed mb-4 opacity-90">
+              <span className="text-indigo-400 text-2xl">"</span>
+              And whoever relies upon Allah - then He is sufficient for him. 
               <br className="hidden md:block" />
-              we craft not just websites, but
-              <span className="bg-gradient-to-r from-emerald-400 via-amber-400 to-emerald-400 bg-clip-text text-transparent font-bold"> digital dreams</span>
-              <span className="text-amber-400">"</span>
+              Indeed, Allah will accomplish His purpose.
+              <span className="text-indigo-400 text-2xl">"</span>
             </blockquote>
-            <div className="flex items-center justify-center gap-2 text-emerald-300">
-              <Heart className="w-5 h-5 text-red-400 animate-pulse" />
-              <span>- Atif & Aquib, Founders</span>
-            </div>
+            <cite className="text-indigo-300 text-sm opacity-70">
+              - Quran 65:3
+            </cite>
           </div>
+        </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 mb-12 animate-fade-up delay-500">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-2">
-                50+
-              </div>
-              <p className="text-slate-300 text-sm md:text-base">Projects Delivered</p>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent mb-2">
-                100%
-              </div>
-              <p className="text-slate-300 text-sm md:text-base">Client Satisfaction</p>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent mb-2">
-                24/7
-              </div>
-              <p className="text-slate-300 text-sm md:text-base">Support</p>
-            </div>
-          </div>
-
-          {/* CTA Button */}
-          <div className="animate-fade-up delay-700">
+        {/* Unique Navigation */}
+        <div className="space-y-6">
+          {/* Mystical Enter Button */}
+          <div className="relative group">
             <button
+              className="relative overflow-hidden bg-gradient-to-r from-indigo-600/20 via-purple-600/20 to-pink-600/20 backdrop-blur-sm border border-indigo-400/30 text-white px-8 py-4 rounded-full font-light text-lg transition-all duration-700 hover:scale-110 hover:shadow-2xl hover:shadow-indigo-500/30"
               onClick={() => setShowMainSite(true)}
-              className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-emerald-500 via-teal-500 to-amber-500 hover:from-emerald-600 hover:via-teal-600 hover:to-amber-600 text-white px-12 py-6 rounded-full font-bold text-xl transition-all duration-500 shadow-2xl hover:shadow-emerald-500/50 hover:scale-110 transform"
             >
-              <Sparkles className="w-6 h-6 animate-spin-slow" />
-              Enter Our World
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
+              <div className="relative z-10 flex items-center gap-3">
+                <StarIcon className="w-5 h-5 animate-pulse" />
+                Enter Our Universe
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+              </div>
               
-              {/* Animated Border */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-amber-500 rounded-full blur-lg opacity-30 group-hover:opacity-60 animate-pulse"></div>
+              {/* Animated background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
+              
+              {/* Ripple effect */}
+              <div className="absolute inset-0 rounded-full bg-white/10 scale-0 group-hover:scale-100 transition-transform duration-700" />
             </button>
           </div>
 
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <div className="flex flex-col items-center gap-2 text-emerald-300">
-              <span className="text-sm font-light">Scroll to explore</span>
-              <ChevronDown className="w-6 h-6 animate-pulse" />
-            </div>
+          {/* Orbit Animation */}
+          <div className="relative w-32 h-8 mx-auto">
+            <div className="absolute w-2 h-2 bg-indigo-400 rounded-full animate-spin origin-center" style={{
+              left: '50%',
+              top: '50%',
+              transform: 'translate(-50%, -50%)',
+              animation: 'orbit 4s linear infinite'
+            }}></div>
+          </div>
+        </div>
+
+        {/* Scroll Hint */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <div className="text-indigo-300 text-xs font-light animate-pulse">
+            ✦ Crafted with purpose ✦
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes orbit {
+          0% { transform: translate(-50%, -50%) rotate(0deg) translateX(60px) rotate(0deg); }
+          100% { transform: translate(-50%, -50%) rotate(360deg) translateX(60px) rotate(-360deg); }
+        }
+      `}</style>
     </div>
   );
+};
 
   // Navigation Component
   const Navigation = () => (
