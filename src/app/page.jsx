@@ -605,21 +605,22 @@ const HomeSection = () => (
               </div>
               
               <div className="space-y-6 text-lg text-slate-300 leading-relaxed font-light">
-                <p className="text-2xl text-white font-normal">
-                  "Every great journey begins with a single step, but ours began with a shared dream."
-                </p>
-                <p>
-                  In the quiet hours of countless nights, two brothers sat side by side, their screens glowing 
-                  with possibility. Atif and Aquib didn't just write code—they painted digital canvases, 
-                  crafted user experiences, and breathed life into pixels.
-                </p>
-                <p>
-                  What started as a passion project in a small room has evolved into A&A Technologies, 
-                  where every line of code tells a story, and every website becomes a gateway to dreams.
-                </p>
-                <blockquote className="border-l-4 border-emerald-500 pl-6 italic text-emerald-300">
-                  "We don't just build websites. We architect digital experiences that leave lasting impressions."
-                </blockquote>
+               <p className="text-2xl text-white font-normal">
+  "Every great journey begins with a single step, but ours began with a shared dream."
+</p>
+<p>
+  In the quiet hours of countless nights, two brothers sat side by side, their screens glowing 
+  with possibility. They didn't just write code—they painted digital canvases, 
+  crafted user experiences, and breathed life into pixels.
+</p>
+<p>
+  What started as a passion project in a small room has evolved into A&A Technologies, 
+  where every line of code tells a story, and every website becomes a gateway to dreams.
+</p>
+<blockquote className="border-l-4 border-emerald-500 pl-6 italic text-emerald-300">
+  "We don't just build websites. We architect digital experiences that leave lasting impressions."
+</blockquote>
+
               </div>
             </div>
             
@@ -628,8 +629,8 @@ const HomeSection = () => (
               <div className="relative group">
                 <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl border border-emerald-500/20">
                   <img
-                    src="./aquibatif.jpg"
-                    alt="Atif & Aquib - The Visionary Brothers"
+                    src="./brothers.jpg"
+                    alt="The Visionary Brothers"
                     className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
                   />
                   {/* <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-amber-500/20 group-hover:from-emerald-500/30 group-hover:to-amber-500/30 transition-all duration-700"></div> */}
