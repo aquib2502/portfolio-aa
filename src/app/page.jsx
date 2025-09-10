@@ -629,7 +629,7 @@ const HomeSection = () => (
               <div className="relative group">
                 <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl border border-emerald-500/20">
                   <img
-                    src="./brothers.jpg"
+                    src="./workspace.jpg"
                     alt="The Visionary Brothers"
                     className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
                   />
