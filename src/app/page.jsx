@@ -514,38 +514,43 @@ const HomeSection = () => (
                 </div>
                 
                 {/* Enhanced Image */}
-                <div className={`relative ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
-                  <div className="relative group/image">
-                    {/* Main Image Container */}
-                    <div className="relative h-80 md:h-96 rounded-3xl overflow-hidden shadow-2xl border border-emerald-500/20 group-hover:border-emerald-400/40 transition-all duration-700">
-                      <img
-                        src={project.image}
-                        alt={`${project.title} Preview`}
-                        className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"
-                      />
-                      
-                      {/* Overlay Gradient */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20 group-hover:opacity-40 transition-all duration-700`}></div>
-                      
-                      {/* Hover Effect */}
-                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all duration-700 flex items-center justify-center">
-                        <div className="transform scale-75 group-hover:scale-100 transition-transform duration-500">
-                          <div className="bg-white/20 backdrop-blur-xl border border-white/30 rounded-2xl p-6 text-center">
-                            <Sparkles className="w-8 h-8 text-emerald-400 mx-auto mb-2 animate-spin-slow" />
-                            <p className="text-white font-bold">Premium Experience</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Enhanced Glow Effects */}
-                    <div className={`absolute -inset-6 bg-gradient-to-r ${project.gradient} rounded-3xl blur-2xl opacity-0 group-hover:opacity-30 transition-all duration-700 animate-pulse-glow`}></div>
-                    
-                    {/* Floating Elements */}
-                    <div className="absolute -top-4 -right-4 w-8 h-8 bg-emerald-400/30 rounded-full animate-float-gentle"></div>
-                    <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-amber-400/30 rounded-lg rotate-45 animate-float-gentle delay-1000"></div>
-                  </div>
-                </div>
+<div className={`relative ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+  <div className="relative group/image w-full">
+    {/* Main Image Container */}
+    <div className="relative w-full aspect-[16/9] md:aspect-[4/3] lg:aspect-[16/9] rounded-3xl overflow-hidden shadow-2xl border border-emerald-500/20 group-hover:border-emerald-400/40 transition-all duration-700">
+      <img
+        src={project.image}
+        alt={`${project.title} Preview`}
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 group-hover:rotate-0.5"
+      />
+
+      {/* Overlay Gradient */}
+      <div
+        className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20 group-hover:opacity-40 transition-all duration-700`}
+      ></div>
+
+      {/* Hover Effect */}
+      <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center">
+        <div className="transform scale-90 group-hover:scale-100 transition-transform duration-500">
+          <div className="bg-white/20 backdrop-blur-xl border border-white/30 rounded-2xl p-6 text-center">
+            <Sparkles className="w-8 h-8 text-emerald-400 mx-auto mb-2 animate-spin-slow" />
+            <p className="text-white font-bold">Premium Experience</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Enhanced Glow Effects */}
+    <div
+      className={`absolute -inset-4 bg-gradient-to-r ${project.gradient} rounded-3xl blur-2xl opacity-0 group-hover:opacity-30 transition-all duration-700 animate-pulse-glow`}
+    ></div>
+
+    {/* Floating Elements */}
+    <div className="absolute -top-2 -right-2 w-6 h-6 bg-emerald-400/30 rounded-full animate-float-gentle"></div>
+    <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-amber-400/30 rounded-lg rotate-45 animate-float-gentle delay-1000"></div>
+  </div>
+</div>
+
               </div>
             </div>
           ))}
@@ -629,7 +634,7 @@ const HomeSection = () => (
               <div className="relative group">
                 <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl border border-emerald-500/20">
                   <img
-                    src="./workspace.jpg"
+                    src="./brothers.jpg"
                     alt="The Visionary Brothers"
                     className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
                   />
