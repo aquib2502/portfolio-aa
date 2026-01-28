@@ -49,6 +49,14 @@
   animation: spinSlow 10s linear infinite;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 /* 
 :root {
   --background: #ffffff;
