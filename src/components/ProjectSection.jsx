@@ -323,6 +323,8 @@ const ProjectsSection = ({ projectsRef }) => {
     return indices;
   }, [activeIndex]);
 
+  const SCROLL_PER_PROJECT = 160; // try 150–200 for stronger effect
+
   return (
     <>
       <ScrollProgressIndicator springProgress={springProgress} />
@@ -364,7 +366,7 @@ const ProjectsSection = ({ projectsRef }) => {
           ref={containerRef}
           className="relative"
           style={{
-            height: `${TOTAL_PROJECTS * 100}vh`
+            height: `${TOTAL_PROJECTS * SCROLL_PER_PROJECT}vh`
           }}
         >
           {/* Sticky container */}
