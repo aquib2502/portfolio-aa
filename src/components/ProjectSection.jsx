@@ -323,7 +323,7 @@ const ProjectsSection = ({ projectsRef }) => {
     return indices;
   }, [activeIndex]);
 
-  const SCROLL_PER_PROJECT = 160; // try 150–200 for stronger effect
+  const SCROLL_PER_PROJECT = 130; // try 150–200 for stronger effect
 
   return (
     <>
